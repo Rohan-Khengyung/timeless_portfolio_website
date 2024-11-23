@@ -1,0 +1,392 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+{% include "head.html" %}
+
+<body>
+
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">
+        <a href="#" style="font-family: 'Playfair Display', serif; font-size: 36px; color: #333; text-decoration: overline; font-weight: bold; letter-spacing: 2px; text-transform: uppercase;">Timeless-Photos</a>
+    </div>
+      <ul class="nav-links">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'award' %}">Awards</a></li>
+        <li><a href="{% url 'services' %}">Services</a></li>
+        <li><a href="{% url 'blog' %}">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Header Styling -->
+    <style>
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 50px;
+        background-color: white;
+        color: black;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar .logo a {
+        font-size: 32px;
+        color: black;
+        text-decoration: overline;
+        font-weight: bold;
+        letter-spacing: 3px;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+      }
+
+      /* Whole Body Font Style */
+*{
+  font-family:"Merriweather", serif;
+}
+p{
+  font-family: Inter;
+     letter-spacing: 0.55px;
+     font-size: 17px;
+     line-height: 28px;
+}
+/* ./Whole Body Font Style */
+.section-heading {
+    font-size: 2.5em;
+    color: #333;
+    font-weight: 700;
+  }
+  
+
+      .nav-links li {
+        position: relative;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: black;
+        font-size: 18px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: #00d8f4;
+        transform: translateY(-5px);
+      }
+
+      /* Underline hover effect */
+      .nav-links a::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #00d8f4;
+        transition: all 0.3s ease;
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+      /* Mobile-friendly */
+      @media (max-width: 768px) {
+        .navbar {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 20px;
+        }
+
+        .nav-links {
+          flex-direction: column;
+          gap: 15px;
+          width: 100%;
+        }
+
+        .nav-links a {
+          font-size: 20px;
+          padding: 10px 0;
+          width: 100%;
+          text-align: left;
+        }
+      }
+    </style>
+<br>
+  </header>
+  
+
+  <main>
+    <!-- Awards Section -->
+    <section id="awards" style="padding: 50px 20px; background-color: #f9f9f9;">
+        <div class="hero-section">
+            <img src="/static/images/sw.jpg" alt="Photography Awards" class="hero-image">
+            <div class="hero-text">
+                <h1>AWARDS</h1>
+                <p style="font-size: 25px;">A few photography awards to be excited about</p>
+            </div>
+        </div>
+    
+        <!-- Content Section -->
+        <div class="content-section">
+            <p style="text-align: center;
+            max-width: 600px;
+            margin: 0 auto; 
+            line-height: 1.5;  
+            font-size: 18px ;">
+                After nearly fifteen years of persistence in entering prestigious competitions, our work was finally recognized. Since then,
+                we’ve received numerous awards, and it’s always rewarding to see our photography featured in top publications.
+            </p>
+            <div class="dot-decoration">
+                <span class="dot">.</span>
+                <span class="dot">.</span>
+                <span class="dot">.</span>
+                <span class="dot">.</span>
+                <span class="dot">.</span>
+                <span class="dot">.</span>
+            </div>
+        </div>
+        
+        <br>
+        <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center;">
+          <!-- Award 1 -->
+          <div style="flex: 1 1 300px; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); padding: 30px; border-radius: 15px; background: white; transition: transform 0.3s;">
+            <img src="{% static 'images/a-5.jpg' %}" alt="Best Photographer Award" class="award-image" style="width: 100%; max-width: 300px; margin: 0 auto; border-radius: 10px; cursor: pointer;">
+            <h3 style="font-size: 24px; margin-top: 20px; color: #333;">Best Photographer of the Year</h3>
+            <p style="font-size: 16px; color: #666; margin-top: 10px;">Awarded for outstanding artistry and innovation in portrait photography.</p>
+          </div>
+          
+          <!-- Award 2 -->
+          <div style="flex: 1 1 300px; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); padding: 30px; border-radius: 15px; background: white; transition: transform 0.3s;">
+            <img src="{% static 'images/a-4.jpg' %}" alt="Creative Excellence Award" class="award-image" style="width: 100%; max-width: 300px; margin: 0 auto; border-radius: 10px; cursor: pointer;">
+            <h3 style="font-size: 24px; margin-top: 20px; color: #333;">Creative Excellence Award</h3>
+            <p style="font-size: 16px; color: #666; margin-top: 10px;">Recognized for innovative use of light and shadow in landscape photography.</p>
+          </div>
+          
+          <!-- Award 3 -->
+          <div style="flex: 1 1 300px; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); padding: 30px; border-radius: 15px; background: white; transition: transform 0.3s;">
+            <img src="{% static 'images/a-3.jpg' %}" alt="Golden Lens Award" class="award-image" style="width: 100%; max-width: 300px; margin: 0 auto; border-radius: 10px; cursor: pointer;">
+            <h3 style="font-size: 24px; margin-top: 20px; color: #333;">Golden Lens Award</h3>
+            <p style="font-size: 16px; color: #666; margin-top: 10px;">A celebration of our outstanding work in wedding photography.</p>
+          </div>
+      
+          <!-- Award 4 -->
+          <div style="flex: 1 1 300px; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); padding: 30px; border-radius: 15px; background: white; transition: transform 0.3s;">
+            <img src="{% static 'images/a-1.jpg' %}" alt="Best Portrait Photography" class="award-image" style="width: 100%; max-width: 300px; margin: 0 auto; border-radius: 10px; cursor: pointer;">
+            <h3 style="font-size: 24px; margin-top: 20px; color: #333;">Best Portrait Photography</h3>
+            <p style="font-size: 16px; color: #666; margin-top: 10px;">Recognized for exceptional portrait work capturing emotions and character.</p>
+          </div>
+      
+          <!-- Award 5 -->
+          <div style="flex: 1 1 300px; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); padding: 30px; border-radius: 15px; background: white; transition: transform 0.3s;">
+            <img src="{% static 'images/a-2.jpeg' %}" alt="Outstanding Wedding Photography" class="award-image" style="width: 100%; max-width: 300px; margin: 0 auto; border-radius: 10px; cursor: pointer;">
+            <h3 style="font-size: 24px; margin-top: 20px; color: #333;">Outstanding Wedding Photography</h3>
+            <p style="font-size: 16px; color: #666; margin-top: 10px;">Awarded for excellence in capturing unforgettable wedding moments.</p>
+          </div>
+      
+          <!-- Award 6 -->
+          <div style="flex: 1 1 300px; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); padding: 30px; border-radius: 15px; background: white; transition: transform 0.3s;">
+            <img src="{% static 'images/a-6.jpg' %}" alt="Excellence in Digital Photography" class="award-image" style="width: 100%; max-width: 300px; margin: 0 auto; border-radius: 10px; cursor: pointer;">
+            <h3 style="font-size: 24px; margin-top: 20px; color: #333;">Excellence in Digital Photography</h3>
+            <p style="font-size: 16px; color: #666; margin-top: 10px;">Recognized for outstanding skills in digital photography and editing.</p>
+          </div>
+      
+          <!-- Award 7 -->
+          <div style="flex: 1 1 300px; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); padding: 30px; border-radius: 15px; background: white; transition: transform 0.3s;">
+            <img src="{% static 'images/a-7.jpg' %}" alt="Best Landscape Photography" class="award-image" style="width: 100%; max-width: 300px; margin: 0 auto; border-radius: 10px; cursor: pointer;">
+            <h3 style="font-size: 24px; margin-top: 20px; color: #333;">Best Landscape Photography</h3>
+            <p style="font-size: 16px; color: #666; margin-top: 10px;">Awarded for capturing breathtaking landscapes with creative vision.</p>
+          </div>
+      
+          <!-- Award 8 -->
+          <div style="flex: 1 1 300px; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); padding: 30px; border-radius: 15px; background: white; transition: transform 0.3s;">
+            <img src="{% static 'images/a-8.jpg' %}" alt="Best Black & White Photography" class="award-image" style="width: 100%; max-width: 300px; margin: 0 auto; border-radius: 10px; cursor: pointer;">
+            <h3 style="font-size: 24px; margin-top: 20px; color: #333;">Best Black & White Photography</h3>
+            <p style="font-size: 16px; color: #666; margin-top: 10px;">For exceptional work in black and white photography with dramatic contrast.</p>
+          </div>
+      
+          <!-- Award 9 -->
+          <div style="flex: 1 1 300px; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); padding: 30px; border-radius: 15px; background: white; transition: transform 0.3s;">
+            <img src="{% static 'images/a-9.jpeg' %}" alt="Best Photojournalism" class="award-image" style="width: 100%; max-width: 300px; margin: 0 auto; border-radius: 10px; cursor: pointer;">
+            <h3 style="font-size: 24px; margin-top: 20px; color: #333;">Best Photojournalism</h3>
+            <p style="font-size: 16px; color: #666; margin-top: 10px;">Awarded for capturing real, raw moments with profound storytelling through photos.</p>
+          </div>
+      
+          <!-- Award 10 -->
+          <div style="flex: 1 1 300px; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); padding: 30px; border-radius: 15px; background: white; transition: transform 0.3s;">
+            <img src="{% static 'images/a-10.jpg' %}" alt="Excellence in Wedding Cinematography" class="award-image" style="width: 100%; max-width: 300px; margin: 0 auto; border-radius: 10px; cursor: pointer;">
+            <h3 style="font-size: 24px; margin-top: 20px; color: #333;">Excellence in Wedding Cinematography</h3>
+            <p style="font-size: 16px; color: #666; margin-top: 10px;">Recognized for exceptional videography in capturing the magic of weddings.</p>
+          </div>
+      
+          <!-- Award 11 -->
+          <div style="flex: 1 1 300px; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); padding: 30px; border-radius: 15px; background: white; transition: transform 0.3s;">
+            <img src="{% static 'images/a-11.jpg' %}" alt="Best Editorial Photography" class="award-image" style="width: 100%; max-width: 300px; margin: 0 auto; border-radius: 10px; cursor: pointer;">
+            <h3 style="font-size: 24px; margin-top: 20px; color: #333;">Best Editorial Photography</h3>
+            <p style="font-size: 16px; color: #666; margin-top: 10px;">Awarded for excellence in editorial work that tells powerful visual stories.</p>
+          </div>
+      
+          <!-- Award 12 -->
+          <div style="flex: 1 1 300px; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); padding: 30px; border-radius: 15px; background: white; transition: transform 0.3s;">
+            <img src="{% static 'images/a-1.png' %}" alt="Best Commercial Photography" class="award-image" style="width: 100%; max-width: 300px; margin: 0 auto; border-radius: 10px; cursor: pointer;">
+            <h3 style="font-size: 24px; margin-top: 20px; color: #333;">Best Commercial Photography</h3>
+            <p style="font-size: 16px; color: #666; margin-top: 10px;">Recognized for exceptional commercial photography that drives brand identity.</p>
+          </div>
+      
+          <!-- Award 13 -->
+          <div style="flex: 1 1 300px; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); padding: 30px; border-radius: 15px; background: white; transition: transform 0.3s;">
+            <img src="{% static 'images/a-13.jpg' %}" alt="Outstanding Fashion Photography" class="award-image" style="width: 100%; max-width: 300px; margin: 0 auto; border-radius: 10px; cursor: pointer;">
+            <h3 style="font-size: 24px; margin-top: 20px; color: #333;">Outstanding Fashion Photography</h3>
+            <p style="font-size: 16px; color: #666; margin-top: 10px;">Awarded for creative and impactful fashion photography.</p>
+          </div>
+      
+          <!-- Award 14 -->
+          <div style="flex: 1 1 300px; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); padding: 30px; border-radius: 15px; background: white; transition: transform 0.3s;">
+            <img src="{% static 'images/a-14.jpg' %}" alt="Outstanding Fashion Photography" class="award-image" style="width: 100%; max-width: 300px; margin: 0 auto; border-radius: 10px; cursor: pointer;">
+            <h3 style="font-size: 24px; margin-top: 20px; color: #333;">International Photography Awards (IPA)</h3>
+            <p style="font-size: 16px; color: #666; margin-top: 10px;">Awarded for creative and impactful fashion photography.</p>
+          </div>
+      
+          <!-- Award 15 -->
+          <div style="flex: 1 1 300px; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); padding: 30px; border-radius: 15px; background: white; transition: transform 0.3s;">
+            <img src="{% static 'images/a-15.jpg' %}" alt="Outstanding Fashion Photography" class="award-image" style="width: 100%; max-width: 300px; margin: 0 auto; border-radius: 10px; cursor: pointer;">
+            <h3 style="font-size: 24px; margin-top: 20px; color: #333;">Red Bull Illume</h3>
+            <p style="font-size: 16px; color: #666; margin-top: 10px;">Awarded for adventure and action sports photography.</p>
+          </div>
+      
+        </div>
+      </section>
+      <!-- /Award Section -->
+
+
+      <style>
+
+        /* Content Section */
+.content-section {
+    padding: 2rem 10%;
+    background-color: #f5f5f5; /* Light gray background */
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333; /* Dark gray text */
+    text-align: justify;
+    font-family: Arial, sans-serif;
+}
+
+.content-section p {
+    margin: 0;
+}
+
+
+.dot-decoration {
+    display: flex;
+    justify-content: center; /* Center dots horizontally */
+    gap: 10px; /* Space between dots */
+    margin-top: 20px; /* Space between the content and the dots */
+}
+
+.dot {
+    font-size: 30px; /* Size of the dot */
+    color: black; /* Dot color */
+}
+
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    filter: grayscale(100%); /* Black and white effect */
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    font-weight: 300;
+}
+
+      </style>
+      
+      
+      <!-- Lightbox Modal -->
+      <div id="lightbox" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); z-index: 2000; justify-content: center; align-items: center;">
+        <img id="lightbox-image" src="" alt="Full Screen Image" style="max-width: 90%; max-height: 90%; border-radius: 10px;">
+        <button id="lightbox-close" style="position: absolute; top: 20px; right: 20px; font-size: 24px; background: none; color: white; border: none; cursor: pointer;">&times;</button>
+      </div>
+      
+      <script>
+        // Select images and modal elements
+        const images = document.querySelectorAll('.award-image');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const lightboxClose = document.getElementById('lightbox-close');
+      
+        // Add click event to each image
+        images.forEach(image => {
+          image.addEventListener('click', () => {
+            lightbox.style.display = 'flex';
+            lightboxImage.src = image.src;
+          });
+        });
+      
+        // Close modal when clicking the close button
+        lightboxClose.addEventListener('click', () => {
+          lightbox.style.display = 'none';
+        });
+      
+        // Close modal when clicking outside the image
+        lightbox.addEventListener('click', (e) => {
+          if (e.target !== lightboxImage) {
+            lightbox.style.display = 'none';
+          }
+        });
+      </script>
+      
+      
+    <!-- Awards Section End -->
+
+    <hr class="between-sections">
+    {% include "contact.html" %}
+
+  </main>
+
+  {% include "footer.html" %}
+
+  {% include "scripts.html" %}
+</body>
+
+</html>

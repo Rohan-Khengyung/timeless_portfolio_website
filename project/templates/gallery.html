@@ -1,0 +1,97 @@
+  <!-- Lightbox2 CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <style>
+    /* Gallery Grid */
+    .gallery-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Gallery Items */
+    .gallery-item {
+      flex: 1 1 calc(33.33% - 1rem); /* 3 items per row on desktop */
+      max-width: calc(33.33% - 1rem);
+      text-align: center;
+    }
+
+    .gallery-img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover; /* Ensures uniform display for images */
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add hover effects */
+    }
+
+    /* Hover Effects */
+    .gallery-img:hover {
+      transform: scale(1.05); /* Slight zoom on hover */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow */
+    }
+
+    /* Laptop Adjustments (1024px and up) */
+    @media (min-width: 1024px) {
+      .gallery-item {
+        flex: 1 1 calc(25% - 1rem); /* 4 items per row */
+        max-width: calc(25% - 1rem);
+      }
+    }
+
+    /* Tablet Adjustments (768px to 1023px) */
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .gallery-item {
+        flex: 1 1 calc(33.33% - 1rem); /* 3 items per row */
+        max-width: calc(33.33% - 1rem);
+      }
+    }
+
+    /* Mobile Adjustments (below 768px) */
+    @media (max-width: 767px) {
+      .gallery-item {
+        flex: 1 1 100%; /* Single column on smaller screens */
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid mt-5 pt-5">
+    {% csrf_token %}
+    <!-- Gallery Section -->
+    <section class="section" id="gallery">
+      <h1 class="section-heading text-center mb-5 mt-4 black-text wow fadeIn" data-wow-delay="0.2s">Gallery</h1>
+      <div class="row wow fadeIn" data-wow-delay="0.4s">
+        <div class="col-md-12">
+          <div class="gallery-grid">
+            {% for img in images %}
+              {% if img.image %}
+                <figure class="gallery-item">
+                  <a href="{{ img.image.url }}" data-lightbox="gallery" data-title="{{ img.alt }}">
+                    <img src="{{ img.image.url }}" alt="{{ img.alt }}" class="gallery-img" />
+                  </a>
+                </figure>
+              {% elif img.link %}
+                <figure class="gallery-item">
+                  <a href="{{ img.link }}" data-lightbox="gallery" data-title="{{ img.alt }}">
+                    <img src="{{ img.link }}" alt="{{ img.alt }}" class="gallery-img" />
+                  </a>
+                </figure>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- "View Gallery" button -->
+    <div class="text-center mt-4 mb-5">
+      <a href="" class="btn btn-blue">More</a>
+    </div>
+  </div>
+
+  <!-- Lightbox2 JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+

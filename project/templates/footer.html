@@ -1,0 +1,178 @@
+<!-- Footer -->
+<footer class="page-footer text-center text-md-left mt-5">
+  <div class="container py-5">
+    <div class="row align-items-center">
+      <!-- Social Links Section -->
+      <div class="col-md-6 text-center text-md-left">
+        <h5 class="text-uppercase text-white mb-3">Follow Us</h5>
+        <div class="footer-socials d-flex justify-content-md-start justify-content-center">
+          <!-- Facebook -->
+          <a href="https://www.facebook.com" target="_blank" aria-label="Facebook" class="btn-floating btn-facebook mx-2">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <!-- YouTube -->
+          <a href="https://www.youtube.com" target="_blank" aria-label="YouTube" class="btn-floating btn-youtube mx-2">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <!-- Twitter -->
+          <a href="https://www.twitter.com" target="_blank" aria-label="Twitter" class="btn-floating btn-twitter mx-2">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <!-- Instagram -->
+          <a href="https://www.instagram.com" target="_blank" aria-label="Instagram" class="btn-floating btn-instagram mx-2">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Sitemap Section -->
+      <div class="col-md-6 text-center text-md-right mt-4 mt-md-0">
+        <h5 class="text-uppercase text-white mb-3">Quick Links</h5>
+        <nav class="sitemap">
+          <a href="#">Home</a> | 
+          <a href="{% url 'services' %}">Services</a> | 
+          <a href="#gallery">Gallery</a> | 
+          <a href="{% url 'blog' %}">Blog</a>|
+          <a href="{% url 'award' %}">Award</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- Legal Links -->
+  <div class="legal-links text-center mt-4">
+    <a href="#privacy-policy">Privacy Policy</a> | 
+    <a href="#terms-of-service">Terms of Service</a>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button onclick="scrollToTop()" class="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- Copyright -->
+  <div class="py-3 text-center" style="background-color: #5ec3f1;
+  border-radius:2px">
+    <div class="container-fluid text-white">
+      &copy; 2024 <a href="#" class="text-white">Timeless Memories</a>. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<!-- CSS Styling -->
+<style>
+/* General Footer Styling */
+footer {
+  background: linear-gradient(45deg, #343a40, #212529);
+  color: white;
+  padding: 20px 5px;
+}
+
+/* Social Links */
+.footer-socials a {
+  color: white;
+  font-size: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #5ec3f1;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+  background-color: #5ec3f1;
+  color: #fff;
+  transform: scale(1.2);
+}
+
+/* Sitemap */
+.sitemap {
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+.sitemap a {
+  color: #5ec3f1;
+  text-decoration: none;
+  margin: 0 12px;
+  transition: color 0.3s ease;
+}
+
+.sitemap a:hover {
+  color: #0077b6;
+  text-decoration: underline;
+}
+
+/* Legal Links */
+.legal-links a {
+  color: #ffffffcc;
+  text-decoration: none;
+  margin: 0 12px;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.legal-links a:hover {
+  color: #5ec3f1;
+}
+
+/* Back-to-Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: none;
+  background: linear-gradient(135deg, #0077b6, #5ec3f1);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 12px;
+  font-size: 22px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.back-to-top:hover {
+  background: linear-gradient(135deg, #5ec3f1, #0077b6);
+  transform: scale(1.1);
+}
+
+/* Footer Copyright Section */
+footer .py-3 {
+  background: #0077b6;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-radius: 3px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .footer-socials {
+    justify-content: center;
+  }
+
+  .sitemap {
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  .legal-links {
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  .footer-socials, .sitemap {
+    margin-bottom: 20px;
+  }
+}
+
+/* Smooth Scroll for Back-to-Top Button */
+html {
+  scroll-behavior: smooth;
+}
+
+</style>

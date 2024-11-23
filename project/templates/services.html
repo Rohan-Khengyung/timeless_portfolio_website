@@ -1,0 +1,392 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+{% include "head.html" %}
+
+  <body>
+
+    <header>
+      <!-- Navbar -->
+      <nav class="navbar">
+        <div class="logo">
+          <a href="#" style="font-family: 'Playfair Display', serif; font-size: 36px; color: #333; text-decoration: overline; font-weight: bold; letter-spacing: 2px; text-transform: uppercase;">Timeless-Photos</a>
+      </div>
+        <ul class="nav-links">
+            <li><a href="{% url "home" %}">Home</a></li>   
+            <li><a href="{% url "award" %}">Awards</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="{% url "blog" %}">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <!-- Navbar End -->
+      
+      <!-- Header Styling -->
+      <style>
+        .navbar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 20px 50px;
+          background-color: white;
+          color: black;
+          position: fixed; 
+          top: 0;
+          width: 100%; 
+          z-index: 1000; 
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      
+      .navbar .logo a {
+          font-size: 32px;
+          color: black;
+          text-decoration:overline;
+          font-weight: bold;
+          letter-spacing: 3px;
+      }
+      .nav-links {
+          list-style: none;
+          display: flex;
+          gap: 30px;
+      }
+      
+      
+/* Whole Body Font Style */
+*{
+  font-family:"Merriweather", serif;
+}
+p{
+  font-family: Inter;
+     letter-spacing: 0.55px;
+     font-size: 17px;
+     line-height: 28px;
+}
+/* ./Whole Body Font Style */
+.section-heading {
+    font-size: 2.5em;
+    color: #333;
+    font-weight: 700;
+  }
+  
+      
+      .nav-links li {
+          position: relative;
+      }
+      
+      .nav-links a {
+          text-decoration: none;
+          color: black;
+          font-size: 18px;
+          font-weight: 500;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          transition: all 0.3s ease;
+      }
+      
+      .nav-links a:hover {
+          color: #00d8f4;
+          transform: translateY(-5px);
+      }
+      
+      /* Underline hover effect */
+      .nav-links a::after {
+          content: '';
+          position: absolute;
+          bottom: -4px;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background-color: #00d8f4;
+          transition: all 0.3s ease;
+      }
+      
+      .nav-links a:hover::after {
+          width: 100%;
+      }
+      
+      
+      /* Mobile-friendly */
+      @media (max-width: 768px) {
+          .navbar {
+              flex-direction: column;
+              align-items: flex-start;
+              padding: 20px;
+          }
+      
+          .nav-links {
+              flex-direction: column;
+              gap: 15px;
+              width: 100%;
+          }
+      
+          .nav-links a {
+              font-size: 20px;
+              padding: 10px 0;
+              width: 100%;
+              text-align: left;
+          }
+      }
+      </style>
+
+      <br><br><br>
+<main>
+
+<!-- Services Section -->
+<div class="services-container" id="services">
+  <section class="services-section">
+    <h1>Our Services</h1>
+    <p class="section-description text-center mx-auto wow fadeIn" data-wow-delay="0.3s">
+      At Capturer, we offer a range of professional photography services tailored to meet your unique needs. With a commitment to excellence and creativity, we strive to exceed your expectations, delivering captivating visuals that tell your story with authenticity and passion.
+    </p>
+    
+    <!-- Services Row -->
+    <div class="row wow fadeIn" data-wow-delay="0.4s">
+      
+      <!-- Service 1 -->
+      <div class="col-md-5 text-center mb-5 service-item">
+        <div class="service-icon">
+          <img src="/static/images/s-1.jpg" alt="Wedding Photography Icon">
+        </div>
+        <h4 class="font-weight-bold mb-3">Wedding Photography</h4>
+        <p class="service-description">Capture your special day with timeless and stunning photographs that tell the story of your love.</p>
+        <a href="#contact" class="btn-cta">Book a Session</a>
+      </div>
+      
+      <!-- Service 2 -->
+      <div class="col-md-5 text-center mb-5 service-item">
+        <div class="service-icon">
+          <img src="/static/images/s-2.jpg" alt="Event Photography Icon">
+        </div>
+        <h4 class="font-weight-bold mb-3">Event Photography</h4>
+        <p class="service-description">From corporate events to personal celebrations, we provide professional photography for every occasion.</p>
+        <a href="#contact" class="btn-cta">Book a Session</a>
+      </div>
+      
+      <!-- Service 3 -->
+      <div class="col-md-6 text-center mb-5 service-item">
+        <div class="service-icon">
+          <img src="/static/images/s-3.jpg" alt="Portrait Sessions Icon">
+        </div>
+        <h4 class="font-weight-bold mb-3">Portrait Sessions</h4>
+        <p class="service-description">Get personalized portrait sessions that bring out your personality and capture your essence beautifully.</p>
+        <a href="#contact" class="btn-cta">Book a Session</a>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="col-md-4 text-center mb-5 service-item">
+        <div class="service-icon">
+          <img src="/static/images/s-4.jpg" alt="Commercial Photography Icon">
+        </div>
+        <h4 class="font-weight-bold mb-3">Commercial Photography</h4>
+        <p class="service-description">High-quality commercial photography to elevate your business’s visual identity and branding.</p>
+        <a href="#contact" class="btn-cta">Book a Session</a>
+      </div>
+      
+      <!-- Service 5 -->
+      <div class="col-md-4 text-center mb-5 service-item">
+        <div class="service-icon">
+          <img src="/static/images/s-5.jpg" alt="Fashion Photography Icon">
+        </div>
+        <h4 class="font-weight-bold mb-3">Fashion Photography</h4>
+        <p class="service-description">Capture your fashion creations with a stunning approach that highlights your brand’s style and essence.</p>
+        <a href="#contact" class="btn-cta">Book a Session</a>
+      </div>
+      
+      <!-- Service 6 -->
+      <div class="col-md-6 text-center mb-5 service-item">
+        <div class="service-icon">
+          <img src="/static/images/s-6.png" alt="Editorial Photography Icon">
+        </div>
+        <h4 class="font-weight-bold mb-3">Editorial Photography</h4>
+        <p class="service-description">Editorial photoshoots that bring your stories and concepts to life with creativity and precision.</p>
+        <a href="#contact" class="btn-cta">Book a Session</a>
+      </div>
+      
+      <!-- Service 7 -->
+      <div class="col-md-7 text-center mb-5 service-item">
+        <div class="service-icon">
+          <img src="/static/images/s-7.jpg" alt="Adventure Sports Photography Icon">
+        </div>
+        <h4 class="font-weight-bold mb-3">Adventure & Action Sports Photography</h4>
+        <p class="service-description">Capture fast-paced, action-packed moments that show your love for adventure and sports.</p>
+        <a href="#contact" class="btn-cta">Book a Session</a>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- /Services Section -->
+<style>
+  /* Main container for services section */
+  .services-container {
+      background-image: url('/static/images/bm.jpg'); /* Ensure the path is correct */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 120px 0; /* Extra padding for spacious feel */
+      position: relative;
+      color: #ffffff;
+      text-align: center;
+      overflow: hidden;
+  }
+  
+  /* Overlay effect for better text contrast */
+  .services-container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Slightly darker overlay for contrast */
+      z-index: 1;
+  }
+  
+  /* Section content above the overlay */
+  .services-section {
+      position: relative;
+      z-index: 2;
+      padding: 0 20px;
+  }
+  
+  /* Section description text */
+  .section-description {
+      max-width: 900px;
+      margin: 0 auto 50px;
+      color: #e0e0e0;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.6;
+      text-align: center;
+      margin-bottom: 50px; /* Spacing below the description */
+  }
+  
+  /* Grid layout for services */
+  .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive grid */
+      gap: 40px; /* Space between items */
+      justify-items: center;
+  }
+  
+  /* Service item container */
+  .service-item {
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 35px;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      height: 100%;
+      overflow: hidden; /* Prevents overflow */
+      margin: 0 auto; /* Centers the items */
+  }
+  
+  /* Hover effect on service item */
+  .service-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      background-color: rgba(0, 0, 0, 0.6); /* Darker hover effect */
+  }
+  
+  /* Service icon styling */
+  .service-icon img {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid #ffffff;
+      opacity: 0.9;
+  }
+  
+  /* Hover effect on service icon */
+  .service-item:hover .service-icon img {
+      transform: scale(1.1);
+      opacity: 1; /* Makes icon more prominent on hover */
+  }
+  
+  /* Service title and description */
+  .service-item h4 {
+      color: #ffffff;
+      font-size: 24px;
+      margin-bottom: 15px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-top: 15px; /* Space above the title */
+  }
+  
+  .service-description {
+      color: #d3d3d3;
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      font-weight: 300;
+  }
+  
+  /* Call-to-action button styling */
+  .btn-cta {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 14px 36px;
+      font-size: 18px;
+      background-color: #00d8f4;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      font-weight: 600;
+  }
+  
+  .btn-cta:hover {
+      background-color: #009dbd;
+      transform: translateY(-5px); /* Subtle lift effect */
+  }
+  
+  /* Mobile-friendly adjustments */
+  @media (max-width: 768px) {
+      .services-container {
+          padding: 80px 20px;
+      }
+  
+      .section-description {
+          font-size: 18px;
+          margin-bottom: 30px;
+      }
+  
+      .service-icon img {
+          width: 80px; /* Smaller icon on mobile */
+          height: 80px;
+      }
+  
+      .service-item h4 {
+          font-size: 22px;
+      }
+  }
+  .btn-cta:hover, .btn-cta:focus {
+    color: #cecece;
+}
+
+
+  </style>
+  
+
+<hr class="between-sections">
+
+  {% include "contact.html" %}
+
+
+  </main>
+  {% include "footer.html" %}
+  {% include "scripts.html" %}
+    </body>
+</html>
+
+
+
+
+
+
+

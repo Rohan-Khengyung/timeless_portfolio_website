@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+{% include "head.html" %}
+
+  <body>
+
+    {% include "header.html"%}
+
+    <main>
+      <!--About Us-->
+      {% include "intro.html" %}
+
+      {% include "client.html" %}
+      
+      <!-- Portfolio -->
+      {% include "portfolio.html" %}
+
+       <!-- Gallery -->
+       {% include "gallery.html" %} 
+
+       <hr class="between-sections">
+ 
+      <!-- Contact -->
+      {% include "contact.html" %}
+      
+    </main>
+    
+    <!--Footer-->
+    {% include "footer.html" %}
+
+    {% include "scripts.html" %}
+  </body>
+</html>
+

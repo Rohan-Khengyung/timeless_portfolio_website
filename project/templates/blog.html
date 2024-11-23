@@ -1,0 +1,313 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+{% include "head.html" %}
+
+  <body>
+
+    <header>
+      <!-- Navbar -->
+      <nav class="navbar">
+        <div class="logo">
+          <a href="#" style="font-family: 'Playfair Display', serif; font-size: 36px; color: #333; text-decoration: overline; font-weight: bold; letter-spacing: 2px; text-transform: uppercase;">Timeless-Photos</a>
+      </div>
+        <ul class="nav-links">
+            <li><a href="{% url 'home' %}">Home</a></li>   
+            <li><a href="{% url 'award' %}">Awards</a></li>
+            <li><a href="{% url 'services' %}">Services</a></li>
+            <li><a href="{% url 'blog' %}">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <!-- Navbar End -->
+
+      <!-- Header Styling -->
+      <style>
+        /* Navbar */
+        .navbar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 20px 50px;
+          background-color: #fff;
+          color: #333;
+          position: fixed; 
+          top: 0;
+          width: 100%; 
+          z-index: 1000; 
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .logo a {
+            font-size: 32px;
+            color: #333;
+            text-decoration: overline;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+        
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #00d8f4;
+            transform: translateY(-5px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #00d8f4;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+/* Whole Body Font Style */
+*{
+  font-family:"Merriweather", serif;
+}
+p{
+  font-family: Inter;
+     letter-spacing: 0.55px;
+     font-size: 17px;
+     line-height: 28px;
+}
+/* ./Whole Body Font Style */
+.section-heading {
+    font-size: 2.5em;
+    color: #333;
+    font-weight: 700;
+  }
+  
+
+        /* Main Blog Layout */
+        main {
+          padding: 100px 30px 30px;
+          background-color: #f8f8f8;
+        }
+
+        .blog-posts {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          gap: 30px;
+          margin-top: 20px;
+        }
+
+        .post {
+          background: #fff;
+          border-radius: 10px;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          overflow: hidden;
+          transition: transform 0.3s ease;
+        }
+
+        .post:hover {
+          transform: translateY(-10px);
+        }
+
+        .post img {
+          width: 100%;
+          height: 250px;
+          object-fit: cover;
+        }
+
+        .post-content {
+          padding: 20px;
+        }
+
+        .post h2 {
+          font-size: 28px;
+          color: #333;
+          margin-bottom: 10px;
+          font-weight: bold;
+        }
+
+        .post .post-date {
+          font-size: 14px;
+          color: #888;
+          margin-bottom: 15px;
+        }
+
+        .post p {
+          font-size: 16px;
+          color: #555;
+          line-height: 1.6;
+        }
+
+        .post a {
+          text-decoration: none;
+          color: #00d8f4;
+          font-weight: 500;
+          display: inline-block;
+          margin-top: 15px;
+        }
+
+        .post a:hover {
+          text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+          background-color: #333;
+          color: #fff;
+          padding: 20px 0;
+          text-align: center;
+        }
+
+        /* Mobile Friendly */
+        @media (max-width: 768px) {
+          .navbar {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px;
+          }
+
+          .nav-links {
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+          }
+
+          .nav-links a {
+            font-size: 20px;
+            padding: 10px 0;
+            width: 100%;
+            text-align: left;
+          }
+
+          .blog-posts {
+            grid-template-columns: 1fr;
+            padding: 10px;
+          }
+
+          .post img {
+            height: 200px;
+          }
+        }
+      </style>
+
+      <br><br><br>
+      
+      <main>
+        <section class="blog-posts">
+          <article class="post">
+            <img src="{% static 'images/blog1.jpg' %}" alt="Photography Composition">
+            <div class="post-content">
+              <h2 style="font-size: 28px;
+              color: #333;
+              margin-bottom: 10px;
+              font-weight: bold;">Understanding Photography Composition</h2>
+              <p class="post-date">Published on November 16, 2024</p>
+              <p class="post-excerpt">Photography composition is one of the most important aspects of creating a stunning image. Learn about techniques like the rule of thirds, leading lines, framing, and symmetry to elevate your photography skills.</p>
+              <a href="#">Read More</a>
+            </div>
+          </article>
+
+          <article class="post">
+            <img src="{% static 'images/blog2.jpg' %}" alt="Photography Styles">
+            <div class="post-content">
+              <h2>Exploring Different Photography Styles</h2>
+              <p class="post-date">Published on November 10, 2024</p>
+              <p class="post-excerpt">From portrait photography to landscapes, explore the different styles that make photography so diverse and creative. Find the style that speaks to you!</p>
+              <a href="#">Read More</a>
+            </div>
+          </article>
+
+          <article class="post">
+            <img src="{% static 'images/blog3.jpg' %}" alt="Lighting in Photography">
+            <div class="post-content">
+              <h2>The Role of Lighting in Photography</h2>
+              <p class="post-date">Published on November 5, 2024</p>
+              <p class="post-excerpt">Lighting is one of the key elements that can drastically change the mood and quality of your photos. In this post, we will explore how to use natural and artificial lighting effectively.</p>
+              <a href="#">Read More</a>
+            </div>
+          </article>
+
+          <article class="post">
+            <img src="{% static 'images/blog4.jpg' %}" alt="Camera Settings">
+            <div class="post-content">
+              <h2>Understanding Camera Settings for Beginners</h2>
+              <p class="post-date">Published on November 1, 2024</p>
+              <p class="post-excerpt">Mastering your camera settings is crucial for getting the perfect shot. Learn the basics of ISO, shutter speed, and aperture in this beginner-friendly post.</p>
+              <a href="#">Read More</a>
+            </div>
+          </article>
+
+          <article class="post">
+            <img src="{% static 'images/blog5.jpg' %}" alt="Editing Photos">
+            <div class="post-content">
+              <h2>Tips for Editing Your Photos Like a Pro</h2>
+              <p class="post-date">Published on October 25, 2024</p>
+              <p class="post-excerpt">Editing is just as important as taking the photo. This post covers key editing techniques to enhance your images and make them stand out.</p>
+              <a href="#">Read More</a>
+            </div>
+          </article>
+
+          <article class="post">
+            <img src="{% static 'images/blog6.jpg' %}" alt="Mobile Photography">
+            <div class="post-content">
+              <h2>Mobile Photography Tips for Stunning Shots</h2>
+              <p class="post-date">Published on October 20, 2024</p>
+              <p class="post-excerpt">You don't need a DSLR to take beautiful photos! Learn some great tips for improving your mobile photography skills.</p>
+              <a href="#">Read More</a>
+            </div>
+          </article>
+
+          <article class="post">
+            <img src="{% static 'images/blog7.jpg' %}" alt="Photography Gear">
+            <div class="post-content">
+              <h2>Must-Have Photography Gear for Beginners</h2>
+              <p class="post-date">Published on October 15, 2024</p>
+              <p class="post-excerpt">Are you just starting in photography? Here are the essential pieces of gear you'll need to get started on your photography journey.</p>
+              <a href="#">Read More</a>
+            </div>
+          </article>
+
+          <article class="post">
+            <img src="{% static 'images/blog8.jpg' %}" alt="Photography Trends">
+            <div class="post-content">
+              <h2>Photography Trends to Watch in 2025</h2>
+              <p class="post-date">Published on October 10, 2024</p>
+              <p class="post-excerpt">Stay ahead of the curve by discovering the latest trends in photography that are set to dominate in 2025.</p>
+              <a href="#">Read More</a>
+            </div>
+          </article>
+        </section>
+      </main>
+
+  <hr class="between-sections">
+  
+  {% include "contact.html" %}
+  
+  </main>
+  
+  {% include "footer.html" %}
+  
+  {% include "scripts.html" %}
+  </body>
+</html>

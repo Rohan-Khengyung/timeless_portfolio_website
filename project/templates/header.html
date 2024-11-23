@@ -1,0 +1,142 @@
+<header>
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="logo">
+    <a href="#" style="font-family: 'Playfair Display', serif; font-size: 36px; color: #333; text-decoration: overline; font-weight: bold; letter-spacing: 2px; text-transform: uppercase;">Timeless-Photos</a>
+</div>
+
+  
+  </div>
+  <ul class="nav-links">
+      <li><a href="#">Home</a></li>   
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="{% url "award" %}">Awards</a></li>
+      <li><a href="{% url "services" %}">Services</a></li>
+      <li><a href="{% url "blog" %}">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+<!-- Navbar End -->
+
+<!-- Header-->
+<header>
+    <div class="view jarallax" data-jarallax='{"speed":0.2}'
+      style="background-image: url('/static/images/b-2.jpg');
+      background-repeat:no-repeat;
+      background-size:cover;
+      background-position: center center;
+      min-height:1000px;">
+      <div class="mask rgba-black-strong">
+        <div class="container h-100 d-flex justify-content-center align-items-center">
+          <div class="row smooth-scroll">
+            <div class="col-md-12">
+              <div class="white-text text-center">
+                <h2 class="display-3 font-weight-bold pb-4 mb-2 wow fadeIn" >Timeless Memories</h2>
+                <h3 class="intro-subtext wow fadeIn" data-wow-delay="0.2s">Professional Photography</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+<!-- Header Styling -->
+<style>
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: white;
+    color: black;
+    position: fixed; 
+    top: 0;
+    width: 100%; 
+    z-index: 1000; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.navbar .logo a {
+    font-size: 32px;
+    color: black;
+    text-decoration:overline;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+/* Whole Body Font Style */
+*{
+  font-family:"Merriweather", serif;
+}
+p{
+  font-family: Inter;
+     letter-spacing: 0.55px;
+     font-size: 17px;
+     line-height: 28px;
+}
+/* ./Whole Body Font Style */
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #00d8f4;
+    transform: translateY(-5px);
+}
+
+/* Underline hover effect */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #00d8f4;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* Mobile-friendly */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .nav-links a {
+        font-size: 20px;
+        padding: 10px 0;
+        width: 100%;
+        text-align: left;
+    }
+}
+</style>
