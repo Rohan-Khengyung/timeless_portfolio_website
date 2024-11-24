@@ -6,128 +6,209 @@
 
   <body>
 
-    <header>
-      <!-- Navbar -->
-      <nav class="navbar">
-        <div class="logo">
-          <a href="#" style="font-family: 'Playfair Display', serif; font-size: 36px; color: #333; text-decoration: overline; font-weight: bold; letter-spacing: 2px; text-transform: uppercase;">Timeless-Photos</a>
-      </div>
-        <ul class="nav-links">
-            <li><a href="{% url "home" %}">Home</a></li>   
-            <li><a href="{% url "award" %}">Awards</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="{% url "blog" %}">Blog</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <!-- Navbar End -->
+  <header>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="#" style="font-family: 'Playfair Display', serif; font-size: 36px; color: #333; text-decoration: overline; font-weight: bold; letter-spacing: 2px; text-transform: uppercase;">Timeless-Photos</a>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <ul class="nav-links" id="navMenu">
+      <li><a href="{% url "home" %}">Home</a></li>   
+      <li><a href="{% url "award" %}">Awards</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="{% url "blog" %}">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <!-- Navbar End -->
+  
       
-      <!-- Header Styling -->
-      <style>
-        .navbar {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 20px 50px;
-          background-color: white;
-          color: black;
-          position: fixed; 
-          top: 0;
-          width: 100%; 
-          z-index: 1000; 
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-      
-      .navbar .logo a {
-          font-size: 32px;
-          color: black;
-          text-decoration:overline;
-          font-weight: bold;
-          letter-spacing: 3px;
-      }
-      .nav-links {
-          list-style: none;
-          display: flex;
-          gap: 30px;
-      }
-      
-      
-/* Whole Body Font Style */
-*{
-  font-family:"Merriweather", serif;
-}
-p{
-  font-family: Inter;
-     letter-spacing: 0.55px;
-     font-size: 17px;
-     line-height: 28px;
-}
-/* ./Whole Body Font Style */
-.section-heading {
+<!-- Header Styling -->
+  <style>
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: white;
+    color: black;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar .logo a {
+    font-size: 32px;
+    color: black;
+    text-decoration: overline;
+    font-weight: bold;
+    letter-spacing: 3px;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    transition: max-height 0.3s ease-in-out;
+  }
+
+  .nav-links li {
+    position: relative;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: #00d8f4;
+    transform: translateY(-5px);
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #00d8f4;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+  /* Whole Body Font Style */
+  *{
+    font-family:"Merriweather", serif;
+   }
+  p{
+    font-family: Inter;
+    letter-spacing: 0.55px;
+    font-size: 17px;
+    line-height: 28px;
+   }
+  /* ./Whole Body Font Style */
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    transition: transform 0.3s ease;
+  }
+
+  /* Mobile-friendly */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+    }
+
+    .nav-links {
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+      max-height: 0;
+      overflow: hidden;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+  }
+  /* Show menu when active */
+  .nav-links.active {
+    max-height: 300px; /* Adjust to fit your content */
+  }
+  .section-heading {
     font-size: 2.5em;
     color: #333;
     font-weight: 700;
   }
-  
+  .nav-links li {
+    position: relative;
+  }
       
-      .nav-links li {
-          position: relative;
+  .nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+  }
+      
+  .nav-links a:hover {
+      color: #00d8f4;
+      transform: translateY(-5px);
+  }
+      
+  /* Underline hover effect */
+  .nav-links a::after{
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #00d8f4;
+      transition: all 0.3s ease;
+  }
+      
+  .nav-links a:hover::after {
+      width: 100%;
+  }
+    
+  /* Mobile-friendly */
+  @media (max-width: 768px) {
+      .navbar {
+          flex-direction: column;
+           align-items: flex-start;
+          padding: 20px;
       }
       
-      .nav-links a {
-          text-decoration: none;
-          color: black;
-          font-size: 18px;
-          font-weight: 500;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          transition: all 0.3s ease;
-      }
-      
-      .nav-links a:hover {
-          color: #00d8f4;
-          transform: translateY(-5px);
-      }
-      
-      /* Underline hover effect */
-      .nav-links a::after {
-          content: '';
-          position: absolute;
-          bottom: -4px;
-          left: 0;
-          width: 0;
-          height: 2px;
-          background-color: #00d8f4;
-          transition: all 0.3s ease;
-      }
-      
-      .nav-links a:hover::after {
+      .nav-links {
+          flex-direction: column;
+          gap: 15px;
           width: 100%;
       }
       
-      
-      /* Mobile-friendly */
-      @media (max-width: 768px) {
-          .navbar {
-              flex-direction: column;
-              align-items: flex-start;
-              padding: 20px;
-          }
-      
-          .nav-links {
-              flex-direction: column;
-              gap: 15px;
-              width: 100%;
-          }
-      
-          .nav-links a {
-              font-size: 20px;
-              padding: 10px 0;
-              width: 100%;
-              text-align: left;
-          }
+      .nav-links a {
+          font-size: 20px;
+          padding: 10px 0;
+           width: 100%;
+          text-align: left;
       }
-      </style>
+  } 
+</style>
+      <script>
+        function toggleMenu() {
+          const menu = document.getElementById('navMenu');
+          menu.classList.toggle('active');
+        }
+      </script> 
 
       <br><br><br>
 <main>
@@ -216,7 +297,10 @@ p{
   </section>
 </div>
 <!-- /Services Section -->
-<style>
+
+
+<!-- Service Styling --> 
+ <style>
   /* Main container for services section */
   .services-container {
       background-image: url('/static/images/bm.jpg'); /* Ensure the path is correct */
@@ -368,15 +452,13 @@ p{
   .btn-cta:hover, .btn-cta:focus {
     color: #cecece;
 }
-
-
-  </style>
+</style>
+<!-- /Service Styling -->
   
 
 <hr class="between-sections">
 
   {% include "contact.html" %}
-
 
   </main>
   {% include "footer.html" %}
